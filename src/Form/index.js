@@ -1,14 +1,24 @@
 import "./style.css"
+import Legend from "./Legend";
+import FormParagraph from "./FormParagraph";
 
-const Form = ({ legend, paragraph }) => (
+const Form = () => (
     <main className="form">
         <fieldset className="form__fieldset">
-            <div className="form__legend">
-                {legend}
-            </div>
-            <section className="section">
-                <p>{paragraph}</p>
-                <p>{paragraph}</p>
+            <legend>
+                <Legend />
+            </legend>
+            <section>
+                <p><FormParagraph
+                    firstName="Yen"
+                    firstDescription="Yen"
+                    secoundDescription="Złoty" />
+                </p>
+                <p><FormParagraph
+                    firstName="Złoty"
+                    firstDescription="Złoty"
+                    secoundDescription="Yen" />
+                </p>
             </section>
         </fieldset>
     </main>
