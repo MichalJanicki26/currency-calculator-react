@@ -1,27 +1,35 @@
+import React, { useState } from "react";
 import "./style.css"
 import Legend from "./Legend";
-import FormParagraph from "./FormParagraph";
+import Section from "./Section";
 
-const Form = () => (
-    <main className="form">
-        <fieldset className="form__fieldset">
-            <legend>
-                <Legend />
-            </legend>
-            <section>
-                <p><FormParagraph
-                    firstName="Yen"
-                    firstDescription="Yen"
-                    secoundDescription="Złoty" />
-                </p>
-                <p><FormParagraph
-                    firstName="Złoty"
-                    firstDescription="Złoty"
-                    secoundDescription="Yen" />
-                </p>
-            </section>
-        </fieldset>
-    </main>
-);
+const Form = ({ setResultToYen, roundResultToYen, setResultToZłoty, roundResultToZłoty }) => {
+
+    return (
+        <form className="form">
+            <fieldset className="form__fieldset">
+                <legend>
+                    <Legend />
+                </legend>
+                <section>
+                    <Section
+                        setResultTo={event => setResultToYen(event.target.value * 0.028425968)}
+                        roundResultTo={roundResultToYen}
+                        descriptionFrom={"Yen"}
+                        descriptionTo={"Złoty"}
+                    />
+                </section >
+                <section>
+                    <Section
+                        setResultTo={event => setResultToZłoty(event.target.value * 35.179102)}
+                        roundResultTo={roundResultToZłoty}
+                        descriptionFrom={"Złoty"}
+                        descriptionTo={"Yen"}
+                    />
+                </section >
+            </fieldset >
+        </form >
+    );
+};
 
 export default Form
