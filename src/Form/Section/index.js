@@ -1,6 +1,6 @@
 import "./style.css"
 
-const Section = ({ setResultTo, roundResultTo, descriptionFrom, descriptionTo, mnożnik }) => {
+const Section = ({ setResultTo, roundResultTo, descriptionFrom: descriptionCurrencyFrom, descriptionTo }) => {
 
     return (
         <>
@@ -13,7 +13,7 @@ const Section = ({ setResultTo, roundResultTo, descriptionFrom, descriptionTo, m
                         onChange={setResultTo}
                         placeholder={0.00}
                     />
-                    <span className="form__currencyDescription">{descriptionFrom}</span>
+                    <span className="form__currencyDescription">{descriptionCurrencyFrom}</span>
 
                     <input
                         className="form__currency form__currency--moveRight form__currency--moveDown"
